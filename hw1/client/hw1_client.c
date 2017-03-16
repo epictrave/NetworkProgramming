@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	int sock;
 	int fd;
 	struct sockaddr_in serv_addr;
-	char message[100];
+	char message[100]="";
 	int str_len;
 	
 	if(argc != 4)
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 	str_len = read(sock, message, sizeof(message));
 	if(str_len == -1)
 		error_handling("read() error");
-	printf("%s", message);	
+
 	fd = open(argv[3], O_CREAT|O_TRUNC|O_WRONLY, S_IWUSR|S_IRUSR|S_IRGRP|S_IROTH);
 	if(fd == -1)
 		error_handling("open() error");

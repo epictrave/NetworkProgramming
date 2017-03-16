@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 	int clnt_sock;
 	int fd;
 	
-	char buf[BUF_SIZE];
+	char buf[BUF_SIZE]="";
 	struct sockaddr_in serv_addr;
 	struct sockaddr_in clnt_addr;
 	socklen_t clnt_addr_size;
