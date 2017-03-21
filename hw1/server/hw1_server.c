@@ -18,7 +18,8 @@ int main(int argc, char* argv[])
 	struct sockaddr_in serv_addr;
 	struct sockaddr_in clnt_addr;
 	socklen_t clnt_addr_size;
-	
+
+	int str_len;	
 	if(argc!=3) 
 	{
 		printf("Usage : %s <port> <filename>\n", argv[0]);
@@ -47,11 +48,11 @@ int main(int argc, char* argv[])
 	fd = open(argv[2], O_RDONLY);
 	if(fd == -1)
 		error_handling("open() error");
-	
-	if(read(fd, buf, sizeof(buf)) == -1)
+	str_len = read(fd,buf, sizeof(buf));
+	if(str_len == -1)
 		error_handling("read() error");
 
-	write(clnt_sock, buf, sizeof(buf));
+	write(clnt_sock, buf, str_len);
 	
 	close(clnt_sock);
 	close(serv_sock);

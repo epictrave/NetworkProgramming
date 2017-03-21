@@ -36,12 +36,12 @@ int main(int argc, char* argv[])
 	str_len = read(sock, message, sizeof(message));
 	if(str_len == -1)
 		error_handling("read() error");
-
+	printf("%d", str_len);
 	fd = open(argv[3], O_CREAT|O_TRUNC|O_WRONLY, S_IWUSR|S_IRUSR|S_IRGRP|S_IROTH);
 	if(fd == -1)
 		error_handling("open() error");
 
-	if(write(fd, message, sizeof(message))==-1)
+	if(write(fd, message, str_len)==-1)
 		error_handling("write() error");
 
 	close(sock);
