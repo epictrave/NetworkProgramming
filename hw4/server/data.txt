@@ -1,0 +1,14 @@
+2012061020 이장훈
+
+Hi
+This is client 1
+Bye
+
+Hello
+This is UDP client
+Bye
+
+HEY
+What's up?
+Yeah. I will go there
+Bye
