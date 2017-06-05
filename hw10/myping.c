@@ -74,8 +74,8 @@ void display(void *buf, int bytes)
 	printf("----------------\n");
 	for ( i = 0; i < bytes; i++ )
 	{
-		if ( !(i & 15) ) printf("\n%d:  ", i);
-		printf("%c ", ((unsigned char*)buf)[i]);
+		if ( !(i & 15) ) printf("\n%d:  ", i);
+		printf("%x ", ((unsigned char*)buf)[i]);
 	}
 	printf("\n");
 

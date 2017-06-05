@@ -147,3 +147,4 @@ int main(int count, char *strings[])
 		printf("usage: myping <hostname>\n");
 	return 0;
 }
+
